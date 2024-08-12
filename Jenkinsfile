@@ -1,13 +1,13 @@
+// we use tools selection to auto-install packages or define path of the packages
 pipeline {
     agent any
+    tools {
+        maven 'MAVEN_PATH'
+    }
     stages {
-        stage ('timeout') {
+        stage ('build') {
             steps {
-                timeout(time: 5, unit: 'SECONDS') {
-                    echo "sleeping for 60secs"
-                    sleep 60
-
-                }
+                sh 'mvn --version'
             }
         }
     }
