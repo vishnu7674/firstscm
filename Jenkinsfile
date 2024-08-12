@@ -6,6 +6,8 @@ pipeline {
         stage ('build') {
             steps {
                 echo "this is the stage for mvn app"
+                // linux commands
+                sh "hostname -i"
             }
         }
         stage ('scriptedstage') {
@@ -19,7 +21,13 @@ pipeline {
                     else
                         println("do learn k8s")
                 }
+                sleep 10
             }
         }
+        // stage ('sonar') {
+        //     steps {
+        //         echo "executin sonar stage"
+        //     }
+        // }
     }
 }
