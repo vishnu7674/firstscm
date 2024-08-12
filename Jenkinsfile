@@ -12,7 +12,7 @@ pipeline {
         }
         stage ('Specificstage'){
             tools {
-                jdk 'jdk-17'
+                jdk 'JDK-17'
             }
             steps {
                 echo "***********mvn version with mycustom java at cd /opt"
